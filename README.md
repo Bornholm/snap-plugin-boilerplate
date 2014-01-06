@@ -12,4 +12,5 @@ plugins:
       dummyFlag: True
 EOF
 grunt run
+vi node_modules/snap-plugin-boilerplate/index.js
 ```
