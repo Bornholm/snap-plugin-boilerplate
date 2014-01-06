@@ -1,6 +1,6 @@
 # SNAP Plugin Boilerplate
 
-## How to install
+## Getting started
 
 ```
 cd <snap_directory>
@@ -11,4 +11,5 @@ plugins:
     options:
       dummyFlag: True
 EOF
+grunt run
 ```
