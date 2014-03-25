@@ -23,18 +23,20 @@ exports.load = function(pluginOpts, next) {
   }
 
   // Expose it via RPC
-  app.server.expose('boilerplate:echo', echo);
+  app.rpc.expose('boilerplate', 'echo', echo);
 
   // Inject client-side code. See "client.js"
-  app.client.inject(__dirname + '/client.js');
+  app.plugins.injectClientSide(__dirname + '/client.js');
 
-  // You shall call "next()" when you're done initializing your plugin
   app.logger.info('Plugin loaded !');
-  return next();
+
+  // You shall call "process.nextTick(next)" when you're done initializing your plugin
+  return process.nextTick(next);
 
 };
 
 // Like "load", but called on application exit (SIGINT)
 exports.unload = function(next) {
-
+  console.log('Unloading plugin boilerplate !')
+  return process.nextTick(next);
 };
