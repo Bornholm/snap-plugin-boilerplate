@@ -4,8 +4,9 @@
 
 ```
 cd <snap_directory>
-npm install git+https://github.com/Bornholm/snap-plugin-boilerplate.git
+npm install git+https://github.com/snap-project/snap-plugin-boilerplate.git
 cat >> "config/`hostname`.yaml" <<EOF
+
 plugins:
   - path: 'node_modules/snap-plugin-boilerplate'
     options:
